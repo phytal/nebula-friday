@@ -1,0 +1,92 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "NebulaTracker-arm64-apple-macosx15.0-debug.exe": ["<NebulaTracker-arm64-apple-macosx15.0-debug.exe>"]
+  "NebulaTracker-arm64-apple-macosx15.0-debug.module": ["<NebulaTracker-arm64-apple-macosx15.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<NebulaTracker-arm64-apple-macosx15.0-debug.exe>","<NebulaTracker-arm64-apple-macosx15.0-debug.module>"]
+  "test": ["<NebulaTracker-arm64-apple-macosx15.0-debug.exe>","<NebulaTracker-arm64-apple-macosx15.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker":
+    is-mutated: true
+commands:
+  "/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker-entitlement.plist"]
+    description: "Write auxiliary file /Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker-entitlement.plist"
+
+  "/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/Configuration.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/EventLogger.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/NebulaTrackerApp.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/NebulaTrackerCLI.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/PermissionChecker.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/PermissionState.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/ScreenCapture.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/SyncAgent.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/WindowTracker.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/DerivedSources/resource_bundle_accessor.swift"]
+    outputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/sources"]
+    description: "Write auxiliary file /Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/sources"
+
+  "/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/Configuration.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/EventLogger.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/NebulaTrackerApp.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/NebulaTrackerCLI.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/PermissionChecker.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/PermissionState.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/ScreenCapture.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/SyncAgent.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/WindowTracker.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/resource_bundle_accessor.swift.o"]
+    outputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.product/Objects.LinkFileList"
+
+  "/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker_NebulaTracker.bundle/nebula-logo.png":
+    tool: copy-tool
+    inputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/Resources/nebula-logo.png"]
+    outputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker_NebulaTracker.bundle/nebula-logo.png"]
+    description: "Copying /Users/phytal/Projects/nebula-app/nebula-tracker/Sources/Resources/nebula-logo.png"
+
+  "/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<NebulaTracker-arm64-apple-macosx15.0-debug.exe>":
+    tool: phony
+    inputs: ["<NebulaTracker-arm64-apple-macosx15.0-debug.exe-CodeSigning>"]
+    outputs: ["<NebulaTracker-arm64-apple-macosx15.0-debug.exe>"]
+
+  "<NebulaTracker-arm64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/Configuration.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/EventLogger.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/NebulaTrackerApp.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/NebulaTrackerCLI.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/PermissionChecker.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/PermissionState.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/ScreenCapture.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/SyncAgent.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/WindowTracker.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/resource_bundle_accessor.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/Modules/NebulaTracker.swiftmodule"]
+    outputs: ["<NebulaTracker-arm64-apple-macosx15.0-debug.module>"]
+
+  "C.NebulaTracker-arm64-apple-macosx15.0-debug.exe":
+    tool: shell
+    inputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/Configuration.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/EventLogger.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/NebulaTrackerApp.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/NebulaTrackerCLI.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/PermissionChecker.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/PermissionState.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/ScreenCapture.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/SyncAgent.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/WindowTracker.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/resource_bundle_accessor.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.product/Objects.LinkFileList"]
+    outputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/NebulaTracker"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-L","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug","-o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker","-module-name","NebulaTracker","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-alias","-Xlinker","_NebulaTracker_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.product/Objects.LinkFileList","-target","arm64-apple-macosx13.0","-Xlinker","-add_ast_path","-Xlinker","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/Modules/NebulaTracker.swiftmodule","-I","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-L","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-plugin-path","/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g"]
+
+  "C.NebulaTracker-arm64-apple-macosx15.0-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker-entitlement.plist"]
+    outputs: ["<NebulaTracker-arm64-apple-macosx15.0-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/NebulaTracker"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker-entitlement.plist","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker"]
+
+  "C.NebulaTracker-arm64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/Configuration.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/EventLogger.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/NebulaTrackerApp.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/NebulaTrackerCLI.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/PermissionChecker.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/PermissionState.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/ScreenCapture.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/SyncAgent.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/WindowTracker.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/DerivedSources/resource_bundle_accessor.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","<NebulaTracker-arm64-apple-macosx15.0-debug.module-resources>","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/sources"]
+    outputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/Configuration.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/EventLogger.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/NebulaTrackerApp.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/NebulaTrackerCLI.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/PermissionChecker.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/PermissionState.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/ScreenCapture.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/SyncAgent.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/WindowTracker.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/resource_bundle_accessor.swift.o","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/Modules/NebulaTracker.swiftmodule"]
+    description: "Compiling Swift Module 'NebulaTracker' (10 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","NebulaTracker","-emit-dependencies","-emit-module","-emit-module-path","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/Modules/NebulaTracker.swiftmodule","-output-file-map","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/output-file-map.json","-incremental","-c","@/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker.build/sources","-I","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx13.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j11","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE","-module-cache-path","/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","NebulaTracker_main","-swift-version","5","-I","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-L","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-plugin-path","/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g"]
+
+  "NebulaTracker-arm64-apple-macosx15.0-debug.module-resources":
+    tool: phony
+    inputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/.build/arm64-apple-macosx/debug/NebulaTracker_NebulaTracker.bundle/nebula-logo.png"]
+    outputs: ["<NebulaTracker-arm64-apple-macosx15.0-debug.module-resources>"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/phytal/Projects/nebula-app/nebula-tracker/Sources/","/Users/phytal/Projects/nebula-app/nebula-tracker/Package.swift","/Users/phytal/Projects/nebula-app/nebula-tracker/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
